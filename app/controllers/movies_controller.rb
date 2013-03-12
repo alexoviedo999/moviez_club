@@ -1,12 +1,23 @@
 class MoviesController < ApplicationController
-  def new
+  def index
+    @movie = Movie.all
   end
 
-  def show
+  def new
+    @movie = Movie.new
+  end
+
+  def create
     title = params[:title].gsub(' ', '+')
     url = "http://www.omdbapi.com/?t=#{title}"
     html = HTTParty.get(url)
-    @hash = JSON(html)
+    @movie = JSON(html)
+    @movie = Movie.create(:title => title, :url => url)
+
+  end
+
+  def show
+
   end
 
 end
