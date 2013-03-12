@@ -12,9 +12,19 @@ class MoviesController < ApplicationController
     url = "http://www.omdbapi.com/?t=#{title}"
     html = HTTParty.get(url)
     @movie = JSON(html)
-    @movie = Movie.create(:title => title, :url => url)
+    title = @movie["Title"]
+    director = @movie['Director']
+    plot = @movie['Plot']
+    year = @movie['Year']
+    poster = @movie['Poster']
+    @movie = Movie.create(:title => title, :director => director, :plot => plot, :url => url)
     redirect_to movies_path
   end
+
+  def search
+
+  end
+
 
   def show
     @movie = Movie.find(params[:id])

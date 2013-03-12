@@ -22,7 +22,7 @@
 #
 
 class Movie < ActiveRecord::Base
-  attr_accessible :name, :title, :url
+  attr_accessible :name, :title, :url, :director, :plot, :year, :poster
   has_many :clubs
   has_many :users, :through => :clubs
 
