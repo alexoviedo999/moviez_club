@@ -9,7 +9,9 @@ MoviezClub::Application.routes.draw do
   resources :users do
     resources :clubs
   end
-  get '/movies/poster' => 'movies#poster'
+  # get '/movies/new' => 'movies#new'
+  # post '/movies/new' => 'movies#search'
+
   root :to => 'home#index'
 
 end

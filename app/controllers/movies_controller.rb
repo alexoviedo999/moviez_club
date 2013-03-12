@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movie = Movie.all
+    @movies = Movie.all
   end
 
   def new
@@ -13,11 +13,11 @@ class MoviesController < ApplicationController
     html = HTTParty.get(url)
     @movie = JSON(html)
     @movie = Movie.create(:title => title, :url => url)
-
+    redirect_to movies_path
   end
 
   def show
-
+    @movie = Movie.find(params[:id])
   end
 
 end

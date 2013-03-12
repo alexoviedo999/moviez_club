@@ -1,3 +1,9 @@
 <section>
   <%= render :partial => 'movies/search' %>
 <section>
+
+<% @movies.each do |movie| %>
+  <tr>
+    <td><%= movie.title %></td>
+  <% end %>
+  </tr>

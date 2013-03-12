@@ -1,18 +1,20 @@
 <section>
-  <img src='<%= @hash['poster'] %>'>
+  <img src='<%= @movie['Title'] %>'>
 </section>
 
 <section>
   <ul>
-    <li><a target='_blank' href='https://www.google.com/search?q=<%= @hash['Title'] %>'><%= @hash['Title'] %></a></li>
-    <li><%= @hash['year'] %></li>
-    <li><%= @hash['Rated'] %></li>
-    <li><%= @hash['Released'] %></li>
-    <li><%= @hash['Runtime'] %></li>
-    <li><%= @hash['Genre'] %></li>
-    <li><%= @hash['Director'] %></li>
-    <li><%= @hash['Writer'] %></li>
-    <li><%= @hash['Actors'] %></li>
-    <li><%= @hash['Plot'] %></li>
+    <li><a target='_blank' href='https://www.google.com/search?q=<%= @movie['Title'] %>'><%= @movie['Title'] %></a></li>
+    <li><%= @movie['title'] %></li>
+    <li><%= @movie['url'] %></li>
+    <li><%= @movie['year'] %></li>
+    <li><%= @movie['Rated'] %></li>
+    <li><%= @movie['Released'] %></li>
+    <li><%= @movie['Runtime'] %></li>
+    <li><%= @movie['Genre'] %></li>
+    <li><%= @movie['Director'] %></li>
+    <li><%= @movie['Writer'] %></li>
+    <li><%= @movie['Actors'] %></li>
+    <li><%= @movie['Plot'] %></li>
   </ul>
 </section>
