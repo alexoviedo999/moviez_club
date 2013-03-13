@@ -1,3 +1,15 @@
 <section>
   <%= render :partial => 'movies/search' %>
 <section>
+
+<section>
+  <ul>
+<li><a target='_blank' href='https://www.google.com/search?q=<%= @result['Title'] %>'><%= @result['Title'] %></a></li>
+    <li><%= @movie.title %></li>
+    <li><%= @movie.director %></li>
+    <li><%= @movie.plot %></li>
+    <li><%= @movie.year %></li>
+    <li><%= @movie.poster %></li>
+
+  </ul>
+</section>

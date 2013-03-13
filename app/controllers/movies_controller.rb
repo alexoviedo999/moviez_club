@@ -7,24 +7,30 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
-  def create
+  def search
     title = params[:title].gsub(' ', '+')
     url = "http://www.omdbapi.com/?t=#{title}"
     html = HTTParty.get(url)
-    @movie = JSON(html)
-    title = @movie["Title"]
-    director = @movie['Director']
-    plot = @movie['Plot']
-    year = @movie['Year']
-    poster = @movie['Poster']
-    @movie = Movie.create(:title => title, :director => director, :plot => plot, :url => url)
-    redirect_to movies_path
+    @result = JSON(html)
+    @movie = Movie.new
+    @movie.title = @result["Title"]
+
+    @movie.director = @result['Director']
+    @movie.plot = @result['Plot']
+    @movie.year = @result['Year']
+    @movie.poster = @result['Poster']
+
+    render :new
   end
 
-  def search
-
+  def create
+    @movie = Movie.new(params[:movie])
+    if @movie.save
+      render @movie
+    else
+      render new
+    end
   end
-
 
   def show
     @movie = Movie.find(params[:id])

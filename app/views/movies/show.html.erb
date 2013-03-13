@@ -5,16 +5,10 @@
 <section>
   <ul>
     <li><a target='_blank' href='https://www.google.com/search?q=<%= @movie['Title'] %>'><%= @movie['Title'] %></a></li>
-    <li><%= @movie['title'] %></li>
-    <li><%= @movie['url'] %></li>
-    <li><%= @movie['year'] %></li>
-    <li><%= @movie['Rated'] %></li>
-    <li><%= @movie['Released'] %></li>
-    <li><%= @movie['Runtime'] %></li>
-    <li><%= @movie['Genre'] %></li>
-    <li><%= @movie['Director'] %></li>
-    <li><%= @movie['Writer'] %></li>
-    <li><%= @movie['Actors'] %></li>
-    <li><%= @movie['Plot'] %></li>
+    <li><%= @movie.title %></li>
+    <li><%= @movie.director %></li>
+    <li><%= @movie.plot %></li>
+    <li><%= @movie.year %></li>
+    <li><%= @movie.poster %></li>
   </ul>
 </section>

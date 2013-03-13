@@ -1,6 +1,6 @@
 .row
   .four.columns
-    = form_tag movies_path do
+    = form_tag movies_search_path do
       = label_tag 'movie'
       = text_field_tag 'title', nil, :autofocus => true
       = submit_tag 'Search Movies', :class => 'button radius'

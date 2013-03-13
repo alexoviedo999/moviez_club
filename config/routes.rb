@@ -6,11 +6,12 @@ MoviezClub::Application.routes.draw do
     resources :clubs
   end
 
+
   resources :users do
     resources :clubs
   end
-  # get '/movies/new' => 'movies#new'
-  # post '/movies/new' => 'movies#search'
+  #get '/movies/new' => 'movies#new'
+  post '/movies/search' => 'movies#search'
 
   root :to => 'home#index'
 
