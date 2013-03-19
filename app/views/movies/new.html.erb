@@ -3,13 +3,23 @@
 <section>
 
 <section>
+  <h1>
   <ul>
-<li><a target='_blank' href='https://www.google.com/search?q=<%= @result['Title'] %>'><%= @result['Title'] %></a></li>
     <li><%= @movie.title %></li>
     <li><%= @movie.director %></li>
     <li><%= @movie.plot %></li>
     <li><%= @movie.year %></li>
     <li><%= @movie.poster %></li>
-
   </ul>
+  </h1>
+
+  <%=submit_tag @movie.save %>
+  <%= link_to "Add Movie", clubs_path(:movie_id => @user), :method => :post %>
+
+
+
+  <!-- <a href="/movies" class="small button">Small Button</a> -->
+  <%#= submit_tag 'Save', :class => 'small button' %>
+
+<!--<%#=button_to "Save: link version", movie_path, :method => "post" %> -->
 </section>

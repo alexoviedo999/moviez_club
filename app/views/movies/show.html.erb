@@ -1,14 +1,19 @@
 <section>
-  <img src='<%= @movie['Title'] %>'>
+  <img src='<%= @movie.poster %>'>
 </section>
 
 <section>
   <ul>
-    <li><a target='_blank' href='https://www.google.com/search?q=<%= @movie['Title'] %>'><%= @movie['Title'] %></a></li>
     <li><%= @movie.title %></li>
     <li><%= @movie.director %></li>
     <li><%= @movie.plot %></li>
     <li><%= @movie.year %></li>
     <li><%= @movie.poster %></li>
   </ul>
+  <%= image_tag @movie.poster %>
+  <%= image_tag @movie.poster %>
+
+
+
 </section>
+
