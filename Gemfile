@@ -8,6 +8,7 @@ gem 'bcrypt-ruby'
 gem 'badfruit'
 gem 'httparty'
 gem 'devise'
+gem 'rmagick'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
