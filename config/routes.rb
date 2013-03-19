@@ -2,15 +2,17 @@ MoviezClub::Application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
 
 
- resources :movies do
-    resources :clubs
-  end
+ # resources :movies do
+ #    resources :clubs
+ #  end
+
+  resources :movies
+  resources :clubs
+
+  resources :users
 
 
-  resources :users do
-    resources :clubs
-  end
-  #get '/movies/new' => 'movies#new'
+  #get '/movies/:id' => 'movies#show'
   post '/movies/search' => 'movies#search'
 
   root :to => 'home#index'
