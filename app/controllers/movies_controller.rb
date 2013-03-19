@@ -19,14 +19,15 @@ class MoviesController < ApplicationController
     @movie.plot = @result['Plot']
     @movie.year = @result['Year']
     @movie.poster = @result['Poster']
-
+    @movie.id = @result['Id']
     render :new
+
   end
 
   def create
     @movie = Movie.new(params[:movie])
     if @movie.save
-      render @movie
+      render show
     else
       render new
     end
